@@ -26,6 +26,7 @@ const convert = async (img) => {
 }
 
 app.post('/nsfw', upload.single("image"), async (req, res) => {
+  console.log("Hit !", req.ip);
   if (!req.file)
     res.status(400).send("Missing image multipart/form-data")
   else {
